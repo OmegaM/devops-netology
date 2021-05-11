@@ -17,3 +17,6 @@ Exclude:
 - [X] override.tf (Use to override  resources locally)
 - [X] .terraformrc (CLI config files)
 
+
+
+#### Change from IDE   
