@@ -22,7 +22,7 @@ ls 2> /dev/pts/[NUMBER_OF_TTY]
 
 #### 5.
 
-cat file > another_file
+cat < [file] > [another_file]
 
 #### 6.
 
@@ -42,26 +42,7 @@ lrwx------ 1 omi omi 64 May 26 02:38 5 -> /dev/pts/1
 #### 8.
 
 ```
-vagrant@vagrant:~$ cat tst.sh
-#!/bin/bash
-
-echo 'Error!' 1>&2
-echo 'One more' 1>&2
-echo 'Dos' 1>&2
-echo 'Tress' 1>&2
-echo 'Not Error!!!'
-
-vagrant@vagrant:~$ bash -c ./tst.sh 5>&2 | cat /proc/$$/fd/5 | grep One
-Error!
-One more
-Dos
-Tress
-^C
-vagrant@vagrant:~$ bash -c ./tst.sh 5>&2 | cat /proc/$$/fd/5 | grep Not
-Error!
-One more
-Dos
-Tress
+command 3>&1 1>&2 2>&3 | command
 ```
 
 #### 9.
