@@ -107,7 +107,7 @@ node_schedstat_running_seconds_total Number of seconds CPU spent running a proce
 
 #### 3.
 
-![netdata](imgs\img.png)
+![netdata](imgs/img.png)
 
 #### 4.
 
@@ -126,6 +126,17 @@ open files                      (-n) 1048576
 ```
 #### 6.
 
+```
+vagrant@vagrant:~$ srceen
+vagrant@vagrant:~$ unshare --fork --pid --mount-proc sleep 1h &
+[1] 1304
+vagrant@vagrant:~$ sudo nsenter --mount -t 1304 --pid
+root@vagrant:/# ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   8076   592 ?        S    08:52   0:00 sleep 1h
+root           2  0.0  0.4   9968  4372 pts/0    S    09:00   0:00 -bash
+root          11  0.0  0.3  11492  3432 pts/0    R+   09:00   0:00 ps aux
+```
 #### 7.
 
 [Википедия](https://en.wikipedia.org/wiki/Fork_bomb)
