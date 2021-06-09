@@ -50,4 +50,3 @@ PATH=/tmp/new_path_directory/bash:$(echo $PATH)
 
 at - executes commands at a specified time.
 
-batch - executes commands when system load levels permit
