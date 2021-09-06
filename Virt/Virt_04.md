@@ -192,6 +192,14 @@ root@8fe2fd0f0b6e:/# apt install curl -y
 vagrant@vagrant:~$ sudo docker network create test_bridge
 0bca87c8fe64c5e37069dbc0e546f9fafdcf47a032b401068625c7a2bceef822
 
+vagrant@vagrant:~$ sudo docker network ls 
+NETWORK ID     NAME          DRIVER    SCOPE
+32a4fc0a0e5d   bridge        bridge    local
+2e3951bdba1b   host          host      local
+c44230960406   none          null      local
+0bca87c8fe64   test_bridge   bridge    local
+3f9126d3efba   tst           bridge    local
+
 vagrant@vagrant:~$ sudo docker network connect test_bridge npm
 vagrant@vagrant:~$ sudo docker network connect test_bridge client
 
