@@ -277,4 +277,4 @@ INSERT 0 8
 ```bash
 root@0381462d6ea7:/# pg_dump -U postgres -d test_database > test_database_dump.sql
 ```
-CREATE INDEX ON orders ((lower(title))); - добавит уникальный индекс на значение столбца title
+ALTER TABLE ONLY orders ADD UNIQUE(title); - добавит уникальность для значения столбца title
