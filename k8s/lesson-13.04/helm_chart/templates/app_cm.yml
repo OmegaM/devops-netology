@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-cm
+data:
+  DATABASE_URL: "postgres://postgres:postgres@db:5432/news"
+  BASE_URL: "http://backend:9000"

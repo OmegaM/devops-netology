@@ -1,0 +1,25 @@
+replicaCount: 1
+
+image:
+  repository: 
+    psql: postgres
+    frontend: cr.yandex/crp3ucg28t1i0afjnne7/frontend
+    backend: cr.yandex/crp3ucg28t1i0afjnne7/backend
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag:
+    psql: 13-alpine
+    frontend: latest
+    backend: latest
+
+imagePullSecrets: 
+  - name: regcred
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 
+    frontend: 80
+    backend: 80
+    db: 5432
